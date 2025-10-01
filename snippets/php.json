@@ -1,0 +1,601 @@
+{
+  "PHP Opening Tag": {
+    "prefix": "php",
+    "body": "<?php $0"
+  },
+  "PHP Opening & Closing Tag": {
+    "prefix": "phpc",
+    "body": "<?php $0 ?>"
+  },
+  "PHP Echo Short Tag": {
+    "prefix": "php=",
+    "body": "<?= $0 ?>"
+  },
+  "PHP Echo": {
+    "prefix": "echo",
+    "body": "echo ${1:'${2:string}'};"
+  },
+  "Print": {
+    "prefix": "print",
+    "body": "print ${1:'${2:string}'};"
+  },
+  "Variable": {
+    "prefix": "var",
+    "body": "\\$${1:variable} = ${2:value};"
+  },
+  "Define Constant": {
+    "prefix": "def",
+    "body": "define('${1:CONSTANT}', ${2:value});"
+  },
+  "Const": {
+    "prefix": "const",
+    "body": "const ${1:CONSTANT} = ${2:value};"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": ["if (${1:condition}) {", "\t$0", "}"]
+  },
+  "If Else": {
+    "prefix": "ife",
+    "body": [
+      "if (${1:condition}) {",
+      "\t${2:// code}",
+      "} else {",
+      "\t${3:// code}",
+      "}"
+    ]
+  },
+  "If Elseif Else": {
+    "prefix": "ifel",
+    "body": [
+      "if (${1:condition}) {",
+      "\t${2:// code}",
+      "} elseif (${3:condition}) {",
+      "\t${4:// code}",
+      "} else {",
+      "\t${5:// code}",
+      "}"
+    ]
+  },
+  "Ternary Operator": {
+    "prefix": "ter",
+    "body": "${1:condition} ? ${2:true} : ${3:false}"
+  },
+  "Null Coalescing": {
+    "prefix": "nc",
+    "body": "${1:variable} ?? ${2:default}"
+  },
+  "Switch Case": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:\\$variable}) {",
+      "\tcase ${2:value}:",
+      "\t\t${3:// code}",
+      "\t\tbreak;",
+      "\tcase ${4:value}:",
+      "\t\t${5:// code}",
+      "\t\tbreak;",
+      "\tdefault:",
+      "\t\t${6:// code}",
+      "\t\tbreak;",
+      "}"
+    ]
+  },
+  "Match Expression": {
+    "prefix": "match",
+    "body": [
+      "match (${1:\\$variable}) {",
+      "\t${2:value} => ${3:result},",
+      "\t${4:value} => ${5:result},",
+      "\tdefault => ${6:result},",
+      "};"
+    ]
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (\\$${1:i} = ${2:0}; \\$${1:i} < ${3:count}; \\$${1:i}++) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Foreach Loop": {
+    "prefix": "foreach",
+    "body": ["foreach (\\$${1:array} as \\$${2:value}) {", "\t$0", "}"]
+  },
+  "Foreach Key Value": {
+    "prefix": "foreachk",
+    "body": [
+      "foreach (\\$${1:array} as \\$${2:key} => \\$${3:value}) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": ["while (${1:condition}) {", "\t$0", "}"]
+  },
+  "Do While Loop": {
+    "prefix": "do",
+    "body": ["do {", "\t$0", "} while (${1:condition});"]
+  },
+  "Function": {
+    "prefix": "func",
+    "body": ["function ${1:functionName}(${2:params})", "{", "\t$0", "}"]
+  },
+  "Function with Return": {
+    "prefix": "funcr",
+    "body": [
+      "function ${1:functionName}(${2:params}): ${3:returnType}",
+      "{",
+      "\t${4:// code}",
+      "\treturn ${5:value};",
+      "}"
+    ]
+  },
+  "Anonymous Function": {
+    "prefix": "fn",
+    "body": ["function (${1:params}) {", "\t$0", "};"]
+  },
+  "Arrow Function": {
+    "prefix": "arrow",
+    "body": "fn(${1:params}) => ${2:expression}"
+  },
+  "Class": {
+    "prefix": "class",
+    "body": ["class ${1:ClassName}", "{", "\t$0", "}"]
+  },
+  "Constructor": {
+    "prefix": "construct",
+    "body": ["public function __construct(${1:params}) {", "\t$0", "}"]
+  },
+  "Public Method": {
+    "prefix": "pubm",
+    "body": [
+      "public function ${1:methodName}(${2:params}): ${3:returnType}",
+      "{",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Private Method": {
+    "prefix": "prim",
+    "body": [
+      "private function ${1:methodName}(${2:params}): ${3:returnType}",
+      "{",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Protected Method": {
+    "prefix": "prom",
+    "body": [
+      "protected function ${1:methodName}(${2:params}): ${3:returnType}",
+      "{",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Static Method": {
+    "prefix": "sm",
+    "body": [
+      "public static function ${1:methodName}(${2:params}): ${3:returnType}",
+      "{",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Getter": {
+    "prefix": "get",
+    "body": [
+      "public function get${1:Property}(): ${2:type}",
+      "{",
+      "\treturn \\$this->${3:property};",
+      "}"
+    ]
+  },
+  "Setter": {
+    "prefix": "set",
+    "body": [
+      "public function set${1:Property}(${2:type} \\$${3:property}): void",
+      "{",
+      "\t\\$this->${3:property} = \\$${3:property};",
+      "}"
+    ]
+  },
+  "Interface": {
+    "prefix": "interface",
+    "body": [
+      "interface ${1:InterfaceName}",
+      "{",
+      "\tpublic function ${2:methodName}(${3:params}): ${4:returnType};",
+      "}"
+    ]
+  },
+  "Trait": {
+    "prefix": "trait",
+    "body": ["trait ${1:TraitName}", "{", "\t$0", "}"]
+  },
+  "Abstract Class": {
+    "prefix": "abstract",
+    "body": [
+      "abstract class ${1:ClassName}",
+      "{",
+      "\tabstract public function ${2:methodName}(${3:params}): ${4:returnType};",
+      "",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Extend Class": {
+    "prefix": "extends",
+    "body": ["class ${1:ClassName} extends ${2:ParentClass}", "{", "\t$0", "}"]
+  },
+  "Implement Interface": {
+    "prefix": "implements",
+    "body": [
+      "class ${1:ClassName} implements ${2:InterfaceName}",
+      "{",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Use Trait": {
+    "prefix": "use",
+    "body": "use ${1:TraitName};"
+  },
+  "Array": {
+    "prefix": "arr",
+    "body": "\\$${1:array} = [${2:values}];"
+  },
+  "Associative Array": {
+    "prefix": "arra",
+    "body": [
+      "\\$${1:array} = [",
+      "\t'${2:key}' => ${3:value},",
+      "\t'${4:key}' => ${5:value},",
+      "];"
+    ]
+  },
+  "Array Push": {
+    "prefix": "arrp",
+    "body": "\\$${1:array}[] = ${2:value};"
+  },
+  "Try Catch": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t${1:// code}",
+      "} catch (${2:Exception} \\$${3:e}) {",
+      "\t${4:// handle exception}",
+      "}"
+    ]
+  },
+  "Try Catch Finally": {
+    "prefix": "tryf",
+    "body": [
+      "try {",
+      "\t${1:// code}",
+      "} catch (${2:Exception} \\$${3:e}) {",
+      "\t${4:// handle exception}",
+      "} finally {",
+      "\t${5:// cleanup}",
+      "}"
+    ]
+  },
+  "Throw Exception": {
+    "prefix": "throw",
+    "body": "throw new ${1:Exception}(${2:'Error message'});"
+  },
+  "Namespace": {
+    "prefix": "namespace",
+    "body": ["namespace ${1:Namespace};", "", "$0"]
+  },
+  "Use Statement": {
+    "prefix": "uses",
+    "body": "use ${1:Namespace\\ClassName};"
+  },
+  "Use As": {
+    "prefix": "useas",
+    "body": "use ${1:Namespace\\ClassName} as ${2:Alias};"
+  },
+  "Require": {
+    "prefix": "req",
+    "body": "require '${1:file.php}';"
+  },
+  "Require Once": {
+    "prefix": "reqo",
+    "body": "require_once '${1:file.php}';"
+  },
+  "Include": {
+    "prefix": "inc",
+    "body": "include '${1:file.php}';"
+  },
+  "Include Once": {
+    "prefix": "inco",
+    "body": "include_once '${1:file.php}';"
+  },
+  "Isset": {
+    "prefix": "isset",
+    "body": "isset(\\$${1:variable})"
+  },
+  "Empty": {
+    "prefix": "empty",
+    "body": "empty(\\$${1:variable})"
+  },
+  "Die": {
+    "prefix": "die",
+    "body": "die(${1:'${2:message}'});"
+  },
+  "Exit": {
+    "prefix": "exit",
+    "body": "exit(${1:0});"
+  },
+  "Var Dump": {
+    "prefix": "vd",
+    "body": "var_dump(\\$${1:variable});"
+  },
+  "Print R": {
+    "prefix": "pr",
+    "body": "print_r(\\$${1:variable});"
+  },
+  "Var Export": {
+    "prefix": "ve",
+    "body": "var_export(\\$${1:variable});"
+  },
+  "$_GET": {
+    "prefix": "$get",
+    "body": "\\$_GET['${1:key}']"
+  },
+  "$_POST": {
+    "prefix": "$post",
+    "body": "\\$_POST['${1:key}']"
+  },
+  "$_REQUEST": {
+    "prefix": "$req",
+    "body": "\\$_REQUEST['${1:key}']"
+  },
+  "$_SESSION": {
+    "prefix": "$sess",
+    "body": "\\$_SESSION['${1:key}']"
+  },
+  "$_COOKIE": {
+    "prefix": "$cook",
+    "body": "\\$_COOKIE['${1:key}']"
+  },
+  "$_SERVER": {
+    "prefix": "$serv",
+    "body": "\\$_SERVER['${1:key}']"
+  },
+  "$_FILES": {
+    "prefix": "$file",
+    "body": "\\$_FILES['${1:key}']"
+  },
+  "Global Variable": {
+    "prefix": "global",
+    "body": "global \\$${1:variable};"
+  },
+  "Static Variable": {
+    "prefix": "static",
+    "body": "static \\$${1:variable} = ${2:value};"
+  },
+  "Session Start": {
+    "prefix": "session",
+    "body": "session_start();"
+  },
+  "JSON Encode": {
+    "prefix": "json_encode",
+    "body": "json_encode(\\$${1:data}, JSON_THROW_ON_ERROR)"
+  },
+  "JSON Decode": {
+    "prefix": "json_decode",
+    "body": "json_decode(\\$${1:json}, true, 512, JSON_THROW_ON_ERROR)"
+  },
+  "PDO Connection": {
+    "prefix": "pdo",
+    "body": [
+      "\\$${1:pdo} = new PDO(",
+      "\t'${2:mysql}:host=${3:localhost};dbname=${4:database}',",
+      "\t'${5:username}',",
+      "\t'${6:password}',",
+      "\t[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]",
+      ");"
+    ]
+  },
+  "PDO Query": {
+    "prefix": "pdoq",
+    "body": [
+      "\\$${1:stmt} = \\$${2:pdo}->query('${3:SELECT * FROM table}');",
+      "\\$${4:results} = \\$${1:stmt}->fetchAll(PDO::FETCH_ASSOC);"
+    ]
+  },
+  "PDO Prepared Statement": {
+    "prefix": "pdop",
+    "body": [
+      "\\$${1:stmt} = \\$${2:pdo}->prepare('${3:SELECT * FROM table WHERE id = :id}');",
+      "\\$${1:stmt}->execute(['${4:id}' => \\$${5:id}]);",
+      "\\$${6:result} = \\$${1:stmt}->fetch(PDO::FETCH_ASSOC);"
+    ]
+  },
+  "PDO Insert": {
+    "prefix": "pdoi",
+    "body": [
+      "\\$${1:stmt} = \\$${2:pdo}->prepare('INSERT INTO ${3:table} (${4:column1}, ${5:column2}) VALUES (:${4:column1}, :${5:column2})');",
+      "\\$${1:stmt}->execute([",
+      "\t'${4:column1}' => \\$${6:value1},",
+      "\t'${5:column2}' => \\$${7:value2},",
+      "]);"
+    ]
+  },
+  "PDO Update": {
+    "prefix": "pdou",
+    "body": [
+      "\\$${1:stmt} = \\$${2:pdo}->prepare('UPDATE ${3:table} SET ${4:column} = :${4:column} WHERE id = :id');",
+      "\\$${1:stmt}->execute([",
+      "\t'${4:column}' => \\$${5:value},",
+      "\t'id' => \\$${6:id},",
+      "]);"
+    ]
+  },
+  "PDO Delete": {
+    "prefix": "pdod",
+    "body": [
+      "\\$${1:stmt} = \\$${2:pdo}->prepare('DELETE FROM ${3:table} WHERE id = :id');",
+      "\\$${1:stmt}->execute(['id' => \\$${4:id}]);"
+    ]
+  },
+  "File Get Contents": {
+    "prefix": "fgc",
+    "body": "\\$${1:content} = file_get_contents('${2:file.txt}');"
+  },
+  "File Put Contents": {
+    "prefix": "fpc",
+    "body": "file_put_contents('${1:file.txt}', \\$${2:content});"
+  },
+  "File Exists": {
+    "prefix": "fexists",
+    "body": "file_exists('${1:file.txt}')"
+  },
+  "Is Dir": {
+    "prefix": "isdir",
+    "body": "is_dir('${1:path}')"
+  },
+  "Heredoc": {
+    "prefix": "heredoc",
+    "body": ["\\$${1:variable} = <<<${2:EOT}", "${3:content}", "${2:EOT};"]
+  },
+  "Nowdoc": {
+    "prefix": "nowdoc",
+    "body": ["\\$${1:variable} = <<<'${2:EOT}'", "${3:content}", "${2:EOT};"]
+  },
+  "Strict Types": {
+    "prefix": "strict",
+    "body": "declare(strict_types=1);"
+  },
+  "Comment Block": {
+    "prefix": "/**",
+    "body": [
+      "/**",
+      " * ${1:Description}",
+      " *",
+      " * @param ${2:type} \\$${3:param}",
+      " * @return ${4:type}",
+      " */"
+    ]
+  },
+  "PHPDoc Property": {
+    "prefix": "prop",
+    "body": [
+      "/**",
+      " * @var ${1:type}",
+      " */",
+      "${2:private} ${1:type} \\$${3:property};"
+    ]
+  },
+  "Readonly Property": {
+    "prefix": "readonly",
+    "body": "${1:private} readonly ${2:type} \\$${3:property};"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "enum ${1:EnumName}: ${2:string}",
+      "{",
+      "\tcase ${3:CASE1} = '${4:value1}';",
+      "\tcase ${5:CASE2} = '${6:value2}';",
+      "}"
+    ]
+  },
+  "String Concatenation": {
+    "prefix": "concat",
+    "body": "\\$${1:result} = ${2:string1} . ${3:string2};"
+  },
+  "String Interpolation": {
+    "prefix": "interp",
+    "body": "\"${1:text} \\${${2:variable}} ${3:text}\""
+  },
+  "Explode": {
+    "prefix": "explode",
+    "body": "\\$${1:array} = explode('${2:delimiter}', \\$${3:string});"
+  },
+  "Implode": {
+    "prefix": "implode",
+    "body": "\\$${1:string} = implode('${2:glue}', \\$${3:array});"
+  },
+  "Array Map": {
+    "prefix": "array_map",
+    "body": [
+      "array_map(function (\\$${1:item}) {",
+      "\treturn ${2:transformation};",
+      "}, \\$${3:array})"
+    ]
+  },
+  "Array Filter": {
+    "prefix": "array_filter",
+    "body": [
+      "array_filter(\\$${1:array}, function (\\$${2:item}) {",
+      "\treturn ${3:condition};",
+      "})"
+    ]
+  },
+  "Array Reduce": {
+    "prefix": "array_reduce",
+    "body": [
+      "array_reduce(\\$${1:array}, function (\\$${2:carry}, \\$${3:item}) {",
+      "\treturn ${4:accumulation};",
+      "}, ${5:initial})"
+    ]
+  },
+  "In Array": {
+    "prefix": "in_array",
+    "body": "in_array(${1:needle}, \\$${2:array}, true)"
+  },
+  "Array Key Exists": {
+    "prefix": "array_key_exists",
+    "body": "array_key_exists('${1:key}', \\$${2:array})"
+  },
+  "Count": {
+    "prefix": "count",
+    "body": "count(\\$${1:array})"
+  },
+  "Sprintf": {
+    "prefix": "sprintf",
+    "body": "sprintf('${1:format}', ${2:args})"
+  },
+  "Preg Match": {
+    "prefix": "preg_match",
+    "body": "preg_match('/${1:pattern}/', \\$${2:subject}, \\$${3:matches})"
+  },
+  "Preg Replace": {
+    "prefix": "preg_replace",
+    "body": "preg_replace('/${1:pattern}/', '${2:replacement}', \\$${3:subject})"
+  },
+  "Str Replace": {
+    "prefix": "str_replace",
+    "body": "str_replace('${1:search}', '${2:replace}', \\$${3:subject})"
+  },
+  "Trim": {
+    "prefix": "trim",
+    "body": "trim(\\$${1:string})"
+  },
+  "Strtolower": {
+    "prefix": "strtolower",
+    "body": "strtolower(\\$${1:string})"
+  },
+  "Strtoupper": {
+    "prefix": "strtoupper",
+    "body": "strtoupper(\\$${1:string})"
+  },
+  "Ucfirst": {
+    "prefix": "ucfirst",
+    "body": "ucfirst(\\$${1:string})"
+  },
+  "Strlen": {
+    "prefix": "strlen",
+    "body": "strlen(\\$${1:string})"
+  },
+  "Substr": {
+    "prefix": "substr",
+    "body": "substr(\\$${1:string}, ${2:start}, ${3:length})"
+  }
+}
