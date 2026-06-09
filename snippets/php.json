@@ -512,7 +512,7 @@
   },
   "String Interpolation": {
     "prefix": "interp",
-    "body": "\"${1:text} \\${${2:variable}} ${3:text}\""
+    "body": "\"${1:text} {\\$${2:variable}} ${3:text}\""
   },
   "Explode": {
     "prefix": "explode",
